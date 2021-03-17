@@ -35,14 +35,6 @@ function klok(){
 	}
 
 
-	// if (uur >= 9 && uur <= 21){
-	// 	document.getElementById('blink').classList.remove('nacht');
-	// 	document.getElementById('blink').classList.add('overdag');
-	// } else {
-	// 	document.getElementById('blink').classList.remove('overdag');
-	// 	document.getElementById('blink').classList.add('nacht');
-	// }
-
 
 
 	if (secondes === 30 || secondes === 0 ){
