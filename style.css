@@ -1,8 +1,8 @@
 body{
-	background-color:black;
+	background-color:#10101E;
 	color: white;
 	display:grid;
-	font-family: Arial;
+	font-family: "Segoe UI" , sans-serif;
 	/*grid-template-columns: repeat(2, minmax(0, 1fr));
 	grid-template-areas: 
 	"menu menu"
@@ -31,21 +31,28 @@ body{
 #klok{
 	margin-left: auto;
 	margin-right: auto;
+	font-size: 35px;
 }
+
+
 
 .overdag{
 	margin-top: 20px;
 	text-align: center;
 	border-style: solid;
-	border-color: white;
-	border-width: 1px;
+	border-color: #5DADE9;
+	border-width: 3px;
 	border-radius: 50%;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 50px;
 	width: 160px;
 	height: 160px;
-	background-color: red;
+	box-shadow: 0 0 30px #5DADE9
+	/*background-color: red;*/
+}
+.overdag:hover{
+	background-color: #5DADE9;
 }
 
 
@@ -53,8 +60,8 @@ body{
 	margin-top: 20px;
 	text-align: center;
 	border-style: solid;
-	border-color: white;
-	border-width: 1px;
+	border-color: #1A344C;
+	border-width: 3px;
 	border-radius: 50%;
 	margin-left: auto;
 	margin-right: auto;
@@ -63,11 +70,14 @@ body{
 	height: 160px;
 	background-color: blue;
 }
+.nacht:hover{
+	background-color: #1A344C;
+}
 
 
 .fade{
 	color: #5c5e5d;
-	opacity: 1;
+	opacity: 0.5;
 	transition: opacity 0.3s ease-in-out;
 }
 
@@ -78,15 +88,13 @@ body{
 }
 
 
-#dag{
+#dag, #datum{
 	text-transform: uppercase;
-	font-size: 16px;
+	font-size: 20px;
+	font-weight: 100;
+	text-align: center;
+	letter-spacing: 3px;
 
-}
-
-#datum{
-	text-transform: uppercase;
-	font-size: 16px;
 }
 
 #welkomBlok{

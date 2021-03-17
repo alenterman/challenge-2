@@ -23,9 +23,15 @@ function klok(){
 	if (uur >= 9 && uur <= 19){
 		document.getElementById('blink').classList.remove('nacht');
 		document.getElementById('blink').classList.add('overdag');
+
+		document.getElementById('body').classList.remove('nachtstand');
+		document.getElementById('body').classList.add('dagstand');
 	} else {
-		document.getElementById('blink').classList.remove('overdag');
+		document.getElementById('blink').classList.remove('dag');
 		document.getElementById('blink').classList.add('nacht');
+
+		document.getElementById('body').classList.remove('dagstand');
+		document.getElementById('body').classList.add('nachtstand');
 	}
 
 
@@ -91,7 +97,7 @@ function welkom() {
 	if (time < 10) {
 		greeting = "Good morning";
 	} else if (time < 20) {
-		greeting = "Good day";
+		greeting = "Good afternoon";
 	} else {
 		greeting ="Good evening";
 	}
