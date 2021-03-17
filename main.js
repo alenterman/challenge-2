@@ -87,11 +87,11 @@ function welkom() {
 	var greeting;
 	
 	if (time < 10) {
-		greeting = "Good morning";
+		greeting = "Good morning, welcome to Mars";
 	} else if (time < 20) {
-		greeting = "Good afternoon";
+		greeting = "Good afternoon, welcome to Mars";
 	} else {
-		greeting ="Good evening";
+		greeting ="Good evening, welcome to Mars";
 	}
 
 document.getElementById("welkomTekst").innerHTML = greeting;
