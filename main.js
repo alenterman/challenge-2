@@ -8,31 +8,65 @@ document.getElementById('dag').innerHTML = weekdag[week.getDay()];
 
 
 
+
+
+
 function klok(){
 
 	var klok = new Date();
 	var minutes = klok.getMinutes();
 	var uur = klok.getHours();
+	var secondes = klok.getSeconds();
 
-	if (uur >= 9 && uur <= 21){
+
+
+	if (uur >= 9 && uur <= 19){
 		document.getElementById('blink').classList.remove('nacht');
-		document.getElementById('blink').classList.remove('dag');
+		document.getElementById('blink').classList.add('overdag');
 	} else {
-		document.getElementById('blink').classList.remove('dag');
-		document.getElementById('blink').classList.remove('nacht');
+		document.getElementById('blink').classList.remove('overdag');
+		document.getElementById('blink').classList.add('nacht');
 	}
+
+
+	// if (uur >= 9 && uur <= 21){
+	// 	document.getElementById('blink').classList.remove('nacht');
+	// 	document.getElementById('blink').classList.add('overdag');
+	// } else {
+	// 	document.getElementById('blink').classList.remove('overdag');
+	// 	document.getElementById('blink').classList.add('nacht');
+	// }
+
+
+
+	if (secondes === 30 || secondes === 0 ){
+		document.getElementById('klok').classList.remove('noFade');
+		document.getElementById('klok').classList.add('fade');
+	}
+	else{
+		document.getElementById('klok').classList.add('noFade');
+		document.getElementById('klok').classList.remove('fade');
+	}
+
+
 
 
 	if (minutes < 10){
 		minutes = '0' + minutes;
 	}
 
-	document.getElementById('klok').innerHTML = klok.getHours() + ':' + minutes;
+	if (secondes < 10){
+		secondes = '0' + secondes;
+	}
+
+	document.getElementById('klok').innerHTML = klok.getHours() + ':' + minutes + ':' + secondes;
         
 }
 
 klok();
 setInterval(klok, 1000);
+
+
 
 
 
@@ -49,15 +83,27 @@ document.getElementById('datum').innerHTML = today.getDate() + ' ' + maanden[tod
 
 
 
-setInterval(function(){
-	document.getElementById("blink").style="display:none";
+function welkom() {
 
-},1000);
+	var time = new Date().getHours();
+	var greeting;
+	
+	if (time < 10) {
+		greeting = "Good morning";
+	} else if (time < 20) {
+		greeting = "Good day";
+	} else {
+		greeting ="Good evening";
+	}
 
-setInterval(function(){
-	document.getElementById("blink").style="display:block";
+document.getElementById("welkomTekst").innerHTML = greeting;
 
-},2000);
+}
+
+window.onload = welkom();
+
+
+
 
 
 
